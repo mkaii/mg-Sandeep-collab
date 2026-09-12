@@ -1,19 +1,30 @@
-var a = 100;
-let b = 1;
+var a = 10; 
+const c = 100;
 
-{
-    var a = 10; // same name as global var
-    let b = 20;
-    const c = 30;
-    console.log(a); // 10
-    console.log(b); // 20
-    console.log(c); // 30
+function x(){
+    const c = 10;
+
+    {
+        const c = 0;
+        console.log(c)
+        var a = 20;
+        console.log(a);
+
+
+        {
+            console.log(c);
+        }
+
+    }
+
+    console.log("Mainak creating a scenario")
+
+    
+
+    console.log(c)
 }
 
-console.log(a);
-console.log(b);
 
-// 10, instead of the 100 we were expecting. So block "a" modified val of global
-//"a" as well. In console, only b and c are in block space. a initially is in global space(a =
-//100), and when a = 10 line is run, a is not created in block space, but replaces 100 with 10 in
-//global space itself.
+
+x();
+console.log(c)
