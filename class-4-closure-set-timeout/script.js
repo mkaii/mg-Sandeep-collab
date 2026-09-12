@@ -1,30 +1,15 @@
-var a = 10; 
-const c = 100;
-
 function x(){
-    const c = 10;
 
-    {
-        const c = 0;
-        console.log(c)
-        var a = 20;
+    var a = 8;
+
+    function y(){
         console.log(a);
-
-
-        {
-            console.log(c);
-        }
-
     }
-
-    console.log("Mainak creating a scenario")
-
     
-
-    console.log(c)
+    return y;
 }
 
+var z = x();
 
 
-x();
-console.log(c)
+z();
