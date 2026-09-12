@@ -1,21 +1,19 @@
-let m = 1;
-
+var a = 100;
+let b = 1;
 
 {
-
- var a = 10; // hoisted in global scope 
- let b = 20; 
- const c = 30;
-
- console.log(a)
- console.log(b)
- console.log(c)
-
+    var a = 10; // same name as global var
+    let b = 20;
+    const c = 30;
+    console.log(a); // 10
+    console.log(b); // 20
+    console.log(c); // 30
 }
 
- //The reason is that in the block scope, we get B and C inside it initialized as `undefined` as part of hoisting at the beginning, while A is stored in the global scope. For the same reason, `let` and `const` are also usually called block-scoped data types, right? They are stored in a separate memory space which is reserved for this block, as we saw in the browsers (what do we call it? Inspector?).
+console.log(a);
+console.log(b);
 
-//Also, they can't be accessed outside this block, which is also what we saw, but `var` A can be accessed anywhere, as it is part of the global scope, right? 
-
-
-
+// 10, instead of the 100 we were expecting. So block "a" modified val of global
+//"a" as well. In console, only b and c are in block space. a initially is in global space(a =
+//100), and when a = 10 line is run, a is not created in block space, but replaces 100 with 10 in
+//global space itself.
